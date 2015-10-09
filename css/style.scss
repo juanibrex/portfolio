@@ -1,0 +1,182 @@
+// Base
+//Reset
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul{
+	list-style: none;
+}
+
+a{
+	color: lightblue;
+	background-color: yellow;
+	padding: .1em;
+}
+
+//Estructura
+body{
+	background: #fff;
+	color: #000;
+	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-size: 1em;
+}
+
+.contenedor{
+	max-width: 980px;
+	margin: auto;
+	//centro el contenido "con margenes" en mobile y hasta llegar a max-with
+	width: 90%;
+	padding-bottom: 3em;
+}
+
+
+//HEADER
+
+header{
+	// background: lightblue;
+	padding-top: 2em;
+	text-align: center;
+
+	img{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		// border: 1px solid #fff;
+		box-shadow: 0 0 0 5px #fff,
+					0 0 0 7px #ccc,
+					0 0 0 8px yellow;
+	}
+
+	h1,
+	h2{
+		font-weight: normal;
+	}
+
+	h2{
+		font-size: .8em;
+		// font-weight: normal;
+	}
+}
+
+hgroup{
+	padding-top: 2em;
+	// background: pink;
+	// text-align: center;
+
+	// & h2{
+	// 	font-size: .8em;
+	// 	font-weight: normal;
+	// }
+}
+
+// BODY
+
+.perfil{
+	background: lightblue;
+	border-radius: 5px;
+	padding: 1em;
+
+	@media screen and (min-width: 600px){
+		max-width: 600px;
+		margin-right: auto;
+		margin-left: auto;
+		// background-color: transparent;
+		font-size: 1.2em;
+		font-weight: 300;
+	}
+}
+
+
+//Trabajos
+
+.work__title{
+	text-align: center;
+}
+.work__list{
+	text-align: center;
+	// margin: auto;
+	width: 100%;
+	// // FLEX
+	// @media screen and (min-width: 800px){
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// 	background-color: red;
+	// } 
+}
+.work__items{
+	// width: 250px;
+	// height: 250px;
+	margin: 3em 0;
+	// background-color: #ccc;
+	// background: url(http://lorempixel.com/250/250);
+	// box-shadow: 0 0 0 5px #fff,
+	// 			0 0 0 10px #ccc;
+	// position: absolute;
+	
+	// FLEX
+	// @media screen and (min-width: 800px){
+	// 	// flex: auto;
+	// 	flex-grow: 1;
+	// 	flex-shrink: 1;
+	// 	flex-basis: auto;
+	// 	align-items: flex-end;
+	// 	align-content: center;
+
+		
+	// }
+
+	// a{
+	// 	display: block;
+	// 	width: 360px;
+	// 	height: 220px;
+	// 	// width: 100%;
+	// 	// height: 100%;	
+	// 	background: url(http://lorempixel.com/360/220);
+
+	// 	// background-color: rgba(#fff,.6);
+	// 	padding: 1em;
+	// 	// position: relative;
+	// 	top: 100%;
+	// 	// box-shadow: 0 0 0 5px #fff,
+	// 	// 			0 0 0 10px #ccc;
+	// 	margin: auto;
+	// 	border: 5px solid #eee;
+
+	// 	@media (min-width: 800px){
+	// 		padding: 3em;
+	// 		width: 200px;
+	// 		height: 200px;
+	// 	}
+	// }
+
+	// p{
+	// 	// background-color: pink;
+	// 	padding: 1em;
+
+	// }
+}
+
+.contacto{
+
+	h2{
+		text-align: center;
+		text-weight: normal;
+	}
+
+	p{
+		background: lightyellow;
+		border-radius: 5px;
+		padding: 1em;
+		margin-top: 3em;
+
+		@media screen and (min-width: 600px){
+			max-width: 600px;
+			margin-right: auto;
+			margin-left: auto;
+			font-size: 1.2em;
+			font-weight: 300;
+		}
+	}
+}
