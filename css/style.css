@@ -1,105 +1,33 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
 
-a {
-  color: lightblue;
-  background-color: yellow;
-  padding: .1em;
-}
+a { color: cadetblue; background-color: lightyellow; -webkit-transition: all 0.5s linear; transition: all 0.5s linear; }
 
-body {
-  background: #fff;
-  color: #000;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1em;
-}
+a:hover { background-color: yellow; }
 
-.contenedor {
-  max-width: 980px;
-  margin: auto;
-  width: 90%;
-  padding-bottom: 3em;
-}
+h1, h2 { font-weight: normal; text-align: center; }
 
-header {
-  padding-top: 2em;
-  text-align: center;
-}
+body { background: #fff; color: #000; font-family: Helvetica, "Helvetica Neue", Arial, sans-serif; font-size: 1em; }
 
-header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 5px #fff, 0 0 0 7px #ccc, 0 0 0 8px yellow;
-}
+.container { max-width: 980px; margin: auto; width: 98%; padding-bottom: 3em; }
 
-header h1,
-header h2 {
-  font-weight: normal;
-}
+header { padding-top: 2em; text-align: center; }
 
-header h2 {
-  font-size: .8em;
-}
+header img { width: 100px; height: 100px; border-radius: 50%; box-shadow: 0 0 0 5px #fff, 0 0 0 7px #ccc, 0 0 0 8px yellow; }
 
-hgroup {
-  padding-top: 2em;
-}
+header h2 { font-size: .8em; }
 
-.perfil {
-  background: lightblue;
-  border-radius: 5px;
-  padding: 1em;
-}
+hgroup { padding-top: 2em; }
 
-@media screen and (min-width: 600px) {
-  .perfil {
-    max-width: 600px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
-}
+.perfil { background: lightblue; border-radius: 5px; padding: 1em; }
 
-.work__title {
-  text-align: center;
-}
+@media screen and (min-width: 600px) { .perfil { max-width: 600px; margin-right: auto; margin-left: auto; font-size: 1.2em; font-weight: 300; } }
 
-.work__list {
-  text-align: center;
-  width: 100%;
-}
+.work__list { text-align: center; width: 100%; }
 
-.work__items {
-  margin: 3em 0;
-}
+.work__items { margin: 3em 0; }
 
-.contacto h2 {
-  text-align: center;
-  text-weight: normal;
-}
+.contacto p { background: bisque; border-radius: 5px; padding: 1em; margin-top: 3em; }
 
-.contacto p {
-  background: lightyellow;
-  border-radius: 5px;
-  padding: 1em;
-  margin-top: 3em;
-}
-
-@media screen and (min-width: 600px) {
-  .contacto p {
-    max-width: 600px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
-}
+@media screen and (min-width: 600px) { .contacto p { max-width: 600px; margin-right: auto; margin-left: auto; font-size: 1.2em; font-weight: 300; } }
