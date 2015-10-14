@@ -1,3 +1,6 @@
+//Font Family
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 // BASE
 //Reset
 *{
@@ -5,6 +8,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 ul{
 	list-style: none;
 }
@@ -31,7 +35,7 @@ h2{
 body{
 	background: #fff;
 	color: #000;
-	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, "Helvetica Neue", Arial, sans-serif;
 	font-size: 1em;
 }
 
@@ -77,7 +81,7 @@ hgroup{
 	padding: 1em;
 
 	@media screen and (min-width: 600px){
-		max-width: 600px;
+		max-width: 750px;
 		margin-right: auto;
 		margin-left: auto;
 		font-size: 1.2em;
@@ -93,6 +97,50 @@ hgroup{
 }
 .work__items{
 	margin: 3em 0;
+
+	//BUG: los a se ven chicos
+	//Podria agrandar los a hasta la vista web a 1.1em
+	//despues seguirian con 1em (default)
+
+	a{
+
+		&:active{
+			transform: scale(.95);
+		}
+
+		@media all and (min-width: 800px){
+			position: relative;
+
+			&:after{
+				content: attr(href);
+				position: absolute;
+				right: 1;
+				top: 0;
+				// width: 100%;
+				// height: 100%;
+				background-color: rgba(#000,.4);
+				color: #fff;
+				font-size: .8em;
+				line-height: 1.5em;
+				padding-right: .5em;
+				padding-left: .5em;
+				border-radius: .2em;
+				box-shadow: 2px 2px 5px rgba(#222, .6);
+				text-shadow: 0 0 2px rgba(#000, .7);
+				display: inline-block;
+				margin-left: 1em;
+				transition: all 2.5s ease;
+				opacity: 0;
+			}
+
+			&:hover{
+
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
 
 .contacto{
@@ -104,7 +152,7 @@ hgroup{
 		margin-top: 3em;
 
 		@media screen and (min-width: 600px){
-			max-width: 600px;
+			max-width: 750px;
 			margin-right: auto;
 			margin-left: auto;
 			font-size: 1.2em;
