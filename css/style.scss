@@ -1,3 +1,23 @@
+//Variables
+//BP: Breack Point para los media querys
+$BP1: 600px;
+
+//Mixins
+//Formato del contenedor de los textos del site
+@mixin contenedor-texto($bg-color, $radius:5px, $ancho-max: 750px){
+	background: $bg-color;
+	border-radius: $radius;
+	padding: 1em;
+
+	@media screen and (min-width: $BP1){
+		max-width: $ancho-max;
+		margin-right: auto;
+		margin-left: auto;
+		font-size: 1.2em;
+		font-weight: 300;
+	}
+}
+
 //Font Family
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
@@ -76,17 +96,7 @@ hgroup{
 // BODY
 
 .perfil{
-	background: lightblue;
-	border-radius: 5px;
-	padding: 1em;
-
-	@media screen and (min-width: 600px){
-		max-width: 750px;
-		margin-right: auto;
-		margin-left: auto;
-		font-size: 1.2em;
-		font-weight: 300;
-	}
+	@include contenedor-texto(lightblue);
 }
 
 
@@ -146,17 +156,7 @@ hgroup{
 .contacto{
 
 	p{
-		background: bisque;
-		border-radius: 5px;
-		padding: 1em;
+		@include contenedor-texto(bisque);
 		margin-top: 3em;
-
-		@media screen and (min-width: 600px){
-			max-width: 750px;
-			margin-right: auto;
-			margin-left: auto;
-			font-size: 1.2em;
-			font-weight: 300;
-		}
 	}
 }
