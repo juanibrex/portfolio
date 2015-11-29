@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Portfolio de trabajos de Juani Brex</title>
 	<meta name="description" content="UI designer & front-end developer">
-	<link rel="stylesheet" href="css/style.css?v=03">
+	<link rel="stylesheet" href="css/style.css?v=04">
 </head>
 <body>
-	<header class="container">
+	<header id="header">
 		<div class="container__item">
 			<img src="http://pbs.twimg.com/profile_images/210686145/me3_400x400.jpg" alt="">
 			<hgroup>
@@ -26,27 +26,47 @@
 	<section class="container">
 		<div class="container__item">
 			<h2 class="work__title">Trabajos y Proyectos</h2>
-			<ul class="work__list">
-				<li class="work__items">
-					<a href="http://www.flconservatorio.com.ar/" target="_blank">Conservatorio Franz Liszt</a>
+			<ul class="work__container">
+				<li class="work__item">
+					<a href="http://www.flconservatorio.com.ar/" target="_blank">
+						<h3>Conservatorio Franz Liszt</h3>
+						<img src="img/conservatoriofl.png" alt="">
+					</a>
 				</li>
-				<li class="work__items">
-					<a href="http://www.ecualia.com.ar/" target="_blank">Ecualia - Avisos Clasificados On-line</a>
+				<li class="work__item">
+					<a href="http://www.ecualia.com.ar/" target="_blank">
+						<h3>Ecualia - Avisos Clasificados On-line</h3>
+						<img src="img/ecualia.png" alt="">
+					</a>
 				</li>
-				<li class="work__items">
-					<a href="http://www.buhlerinmobiliaria.com.ar/" target="_blank">Buhler Inmobiliaria</a>
+				<li class="work__item">
+					<a href="http://www.buhlerinmobiliaria.com.ar/" target="_blank">
+						<h3>Buhler Inmobiliaria</h3>
+						<img src="img/buhler.png" alt="">
+					</a>
 				</li>
-				<li class="work__items">
-					<a href="#" target="_blank">Futborama - Videos de Fútbol</a>
+				<li class="work__item">
+					<a href="#" target="_blank">
+						<h3>Futborama - Videos de Fútbol</h3>
+						<img src="img/futborama.png" alt="">
+					</a>
 				</li>
 			</ul>
 		</div>
 	</section>
 	<section class="container">
 		<div class="container__item">
-			<div class="contacto">
-				<h2>Nos mantenemos en Contacto ;)</h2>
-				<p>No dudes en contactarte conmigo. Puedes encontrarme en <a href="https://twitter.com/JuaniBrex" target="_blank">twitter</a>, <a href="https://www.linkedin.com/in/juanbrex" target="_blank">Linkedin</a> o escribirme un <a href="mailto:juanbrex@gmail.com">mail</a>.</p>
+			<h2>Nos mantenemos en Contacto ;)</h2>	
+			<div class="contact__container">
+				<div class="contact__item">
+					<form method="post" action="//flipmail.co/api/ecwsheN2jp0Np9pxpkJF">
+					    <input type="text" name="name" placeholder="Tu nombre" required>
+					    <input type="email" name="email" placeholder="Tu email" required>
+					    <textarea name="message" rows="3" placeholder="tu mensaje" required></textarea>
+					    <button type="submit">enviar</button>
+					</form>
+				</div>
+				<p class="contact__item">No dudes en contactarte conmigo. Puedes escribirme mediente el formulario de contacto o bien, puedes encontrarme en <a href="https://twitter.com/JuaniBrex" target="_blank">twitter</a> y <a href="https://www.linkedin.com/in/juanbrex" target="_blank">Linkedin</a>.</p>
 			</div>
 		</div>
 	</section>

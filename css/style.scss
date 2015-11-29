@@ -4,7 +4,7 @@ $BP1: 600px;
 
 //Mixins
 //Formato del contenedor de los textos del site
-@mixin contenedor-texto($bg-color, $radius:5px, $ancho-max: 750px){
+@mixin contenedor-texto($bg-color:transparent, $radius:5px, $ancho-max: 750px){
 	background: $bg-color;
 	border-radius: $radius;
 	padding: 1em;
@@ -18,11 +18,11 @@ $BP1: 600px;
 	}
 }
 
-//Font Family
+//Font Family ----
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
-// BASE
-//Reset
+// BASE ----
+//Reset --
 *{
 	margin: 0;
 	padding: 0;
@@ -43,14 +43,14 @@ a{
 	}
 }
 
-// Titulos
+// Titulos --
 h1,
 h2{
 	font-weight: normal;
 	text-align: center;
 }
 
-//ESTRUCTURA
+//ESTRUCTURA ----
 
 body{
 	background: #fff;
@@ -68,11 +68,24 @@ body{
 }
 
 
-//HEADER
+//HEADER ----
 
-header{
-	padding-top: 2em;
+#header{
+	padding-top: 5em;
+	padding-bottom: 5em;
 	text-align: center;
+	margin-bottom: 3em;
+	color: #fff;
+
+	// VARIABLES colores
+	$fheader: #1abc9c; //darken(yellow, 10); //fondo
+	$rombos: lighten($fheader, 10); //frente
+
+	background-color: $fheader;
+	background-image: 
+		linear-gradient(45deg, $rombos 25%, transparent 25%, transparent 75%, $rombos 75%, $rombos), 
+		linear-gradient(-45deg, $rombos 25%, transparent 25%, transparent 75%, $rombos 75%, $rombos);
+	background-size: 10px 10px;
 
 	img{
 		width: 100px;
@@ -80,83 +93,288 @@ header{
 		border-radius: 50%;
 		box-shadow: 0 0 0 5px #fff,
 					0 0 0 7px #ccc,
-					0 0 0 8px yellow;
+					0 0 0 28px $rombos;
+		// animation-name: dropIn;
+		// animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 1.0);
+		// animation-duration: 1s;
+	}
+
+	hgroup{
+		padding-top: 2.5em;
 	}
 
 	h2{
-		font-size: .8em;
+		font-size: .9em;
 	}
 }
 
-hgroup{
-	padding-top: 2em;
-}
+// BODY ----
 
-
-// BODY
-
+//Perfil --
 .perfil{
-	@include contenedor-texto(lightblue);
+	@include contenedor-texto();
 }
 
 
-//Trabajos
-.work__list{
-	text-align: center;
-	width: 100%;
-}
-.work__items{
-	margin: 3em 0;
+//Trabajos --
 
-	//BUG: los a se ven chicos
-	//Podria agrandar los a hasta la vista web a 1.1em
-	//despues seguirian con 1em (default)
+.work__container{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2em;
+
+	// @media screen and (min-width: $BP1) {
+	// 	max-width: 750px;
+ //    	margin-right: auto;
+ //    	margin-left: auto;
+	// }
+
+}
+
+.work__item{
+	width: calc(100% - 2em);
+	margin: 1em;
+	// overflow: hidden;
+	border-top: 1em;
+	border-right: .5em;
+	border-bottom: .5em;
+	border-left: .5em;
+	border-color: #eee;
+	border-style: solid;
+	border-radius: .4em;
+	background-color: #eee;
+	// position: relative; //para ubicar el :after
+
+	@media screen and (min-width: $BP1){
+		width: calc(50% - 2em);
+	}
 
 	a{
+		text-decoration: none;
+		color: #000;
+		position: relative;
 
-		&:active{
-			transform: scale(.95);
+		&:before{
+			content:"";
+			width: 12px;
+			height: 12px;
+			background-color: #87CEEB;
+			border-radius: 50%;
+			top: .35em;
+			left: .25em;
+			position: absolute;
 		}
 
-		@media all and (min-width: 800px){
-			position: relative;
+		// &:after{
+		// 	content:"";
+		// 	width: 12px;
+		// 	height: 12px;
+		// 	background-color: black;
+		// 	border-radius: 50%;
+		// 	top: 0;
+		// 	left: 1.25em;
+		// 	position: absolute;
+		// }
+	}
 
-			&:after{
-				content: attr(href);
-				position: absolute;
-				right: 1;
-				top: 0;
-				// width: 100%;
-				// height: 100%;
-				background-color: rgba(#000,.4);
-				color: #fff;
-				font-size: .8em;
-				line-height: 1.5em;
-				padding-right: .5em;
-				padding-left: .5em;
-				border-radius: .2em;
-				box-shadow: 2px 2px 5px rgba(#222, .6);
-				text-shadow: 0 0 2px rgba(#000, .7);
-				display: inline-block;
-				margin-left: 1em;
-				transition: all 2.5s ease;
-				opacity: 0;
-			}
+	h3{
+		font-size: .75em;
+		font-weight: 100;
+		background-color: #fff;
+		padding: .25em;
+		margin-bottom: 1.5em;
+		margin-left: 11%;
+		border-radius: .4em;
+		width: 88%;
+		// text-align: right;
+		// display: inline;
+		// position: relative;
 
-			&:hover{
+		// &:before{
+		// 	content:"";
+		// 	width: 12px;
+		// 	height: 12px;
+		// 	background-color: green;
+		// 	border-radius: 50%;
+		// 	top: .2em;
+		// 	left: -4.4em;
+		// 	position: absolute;
+		// }
 
-				&:after{
-					opacity: 1;
-				}
-			}
+		// &:after{
+		// 	content:"";
+		// 	width: 12px;
+		// 	height: 12px;
+		// 	background-color: yellow;
+		// 	border-radius: 50%;
+		// 	top: .2em;
+		// 	left: -3em;
+		// 	position: absolute;
+		// }
+	}
+
+	img{
+		width: 100%;
+		display: block;
+		border-radius: .3em;
+		transition: all 2s; //para el hover
+		// opacity: .5;
+
+		&:hover {
+			opacity: .5;
 		}
 	}
+
+	// &:hover{
+
+	// 	img{
+	// 		opacity: .5;
+	// 	}
+	// 	//efectos con hover
+	// 	&:after{
+	// 		opacity: 1;
+	// 		top: 0;
+	// 	}
+	// }
+
+	// &:after{
+	// 	content: "☺";
+	// 	position: absolute;
+	// 	top: 100%;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background-color: rgba(#000, .2);
+	// 	opacity: 0;
+	// 	transition: all .9s;
+	// }
+
+	// a{
+	// 	display: inline-block;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	// line-height: 100px;
+	// 	background-image: url(../img/image.jpg);
+	// }
 }
 
+
+// .work__list{
+// 	text-align: center;
+// 	width: 100%;
+// }
+
+// .work__items{
+// 	margin: 3em 0;
+
+// 	//BUG: los a se ven chicos
+// 	//Podria agrandar los a hasta la vista web a 1.1em
+// 	//despues seguirian con 1em (default)
+
+// 	a{
+
+// 		&:active{
+// 			transform: scale(.95);
+// 		}
+
+// 		@media all and (min-width: 800px){
+// 			position: relative;
+
+// 			&:after{
+// 				content: attr(href);
+// 				position: absolute;
+// 				right: 1;
+// 				top: 0;
+// 				// width: 100%;
+// 				// height: 100%;
+// 				background-color: rgba(#000,.4);
+// 				color: #fff;
+// 				font-size: .8em;
+// 				line-height: 1.5em;
+// 				padding-right: .5em;
+// 				padding-left: .5em;
+// 				border-radius: .2em;
+// 				box-shadow: 2px 2px 5px rgba(#222, .6);
+// 				text-shadow: 0 0 2px rgba(#000, .7);
+// 				display: inline-block;
+// 				margin-left: 1em;
+// 				transition: all 2.5s ease;
+// 				opacity: 0;
+// 			}
+
+// 			&:hover{
+
+// 				&:after{
+// 					opacity: 1;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+//Contacto --
 .contacto{
 
 	p{
 		@include contenedor-texto(bisque);
 		margin-top: 3em;
+	}
+}
+
+.contact__container{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2em;
+
+	.contact__item{
+		width: calc(100% - 2em);
+		margin: 1em;
+
+		@media screen and (min-width: $BP1){
+			width: calc(50% - 2em);
+		}
+	}
+
+	form{
+		width: 100%;
+		padding: .5em;
+	}
+
+	input,
+	textarea{
+		display: block;
+		padding: .5em;
+		margin-top: 1em;
+		width: 95%;
+		// border-radius: 5px;
+		// border: 0 0 1px 0 solid #eee;
+		border-top: 0;
+		border-right: 0;
+		border-bottom: 1px;
+		border-left: 0;
+		border-color: #bbb;
+		border-style: solid;
+		font-family: inherit;
+	}
+	button{
+		margin-top: 1em;
+		padding: .5em;
+		cursor: pointer;
+		width: 25%;
+		background-color: #eee;
+		border: 1px solid #ddd;
+		border-radius: .25em;
+	}
+
+	p{
+		padding: 1em .5em;
+		font-weight: 100;
 	}
 }
