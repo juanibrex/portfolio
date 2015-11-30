@@ -71,20 +71,33 @@ body{
 //HEADER ----
 
 #header{
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 7em;
+	padding-bottom: 3em;
 	text-align: center;
 	margin-bottom: 3em;
 	color: #fff;
 
 	// VARIABLES colores
 	$fheader: #1abc9c; //darken(yellow, 10); //fondo
-	$rombos: lighten($fheader, 10); //frente
+	$rombos: lighten($fheader, 15); //frente
 
 	background-color: $fheader;
-	background-image: 
-		linear-gradient(45deg, $rombos 25%, transparent 25%, transparent 75%, $rombos 75%, $rombos), 
-		linear-gradient(-45deg, $rombos 25%, transparent 25%, transparent 75%, $rombos 75%, $rombos);
+	background-image: linear-gradient(
+		45deg, 
+		$rombos 25%, 
+		transparent 25%, 
+		transparent 75%, 
+		$rombos 75%, 
+		$rombos
+		), 
+		linear-gradient(
+		-45deg, 
+		$rombos 25%, 
+		transparent 25%, 
+		transparent 75%, 
+		$rombos 75%, 
+		$rombos
+		);
 	background-size: 10px 10px;
 
 	img{
@@ -92,15 +105,27 @@ body{
 		height: 100px;
 		border-radius: 50%;
 		box-shadow: 0 0 0 5px #fff,
-					0 0 0 7px #ccc,
+					0 0 0 6px #ccc,
 					0 0 0 28px $rombos;
-		// animation-name: dropIn;
-		// animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 1.0);
-		// animation-duration: 1s;
+		// inspirado de http://formspree.io/ ;)
+		animation-name: dropIn;
+		animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 1.0);
+		animation-duration: 1.5s;
+
+		@keyframes dropIn{
+			0%{
+				opacity: 0;
+				transform: translate3d(0, -150px, 0);
+			}
+			100%{
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
 	}
 
 	hgroup{
-		padding-top: 2.5em;
+		padding-top: 2em;
 	}
 
 	h2{
