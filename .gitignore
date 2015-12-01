@@ -1,3 +1,4 @@
 prepros.cfg
-*.scss
-css/*.scss
+# *.scss
+# css/*.scss
+css/style.scss
